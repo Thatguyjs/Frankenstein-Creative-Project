@@ -48,6 +48,19 @@
 	background: rgba(0, 0, 0, 0.4);
 }
 
+#menu p {
+	position: absolute;
+	text-align: center;
+
+	bottom: 18px;
+	margin: 0;
+
+	width: 100%;
+
+	color: rgb(150, 150, 150);
+	font-size: 19px;
+}
+
 
 /* Create monster stuff */
 #create h2 {
@@ -60,7 +73,7 @@
 #create .select-part {
 	margin-left: 100px;
 	margin-bottom: 40px;
-	
+
 	height: 40px;
 }
 
@@ -80,10 +93,31 @@
 	border: 2px solid rgb(28, 28, 28);
 	border-radius: 3px;
 
-	transition: background 0.2s, border 0.2s;
+	transition: background 0.1s, border 0.1s;
 }
 
-#create .select-part .selected {
+#create .select-part > .selected {
 	background: rgb(15, 45, 20);
 	border: 2px solid rgb(24, 50, 28);
 }
+
+#create #finish-monster {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+	margin-bottom: 40px;
+
+	width: 170px;
+	height: 50px;
+
+	color: white;
+	font-size: 20px;
+
+	background: rgb(60, 60, 60);
+	border: 2px solid rgb(72, 72, 72);
+	border-radius: 4px;
+}
+
+
+/* Monster comparisons and stuff */

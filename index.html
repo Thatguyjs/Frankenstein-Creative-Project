@@ -5,7 +5,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Frankenstein Creative Project</title>
+		<title>Frankenstein Character Creator</title>
 
 		<link rel="stylesheet" href="/include/common.css">
 		<link rel="stylesheet" href="style.css">
@@ -31,10 +31,12 @@
 			<!-- Menu -->
 			<div id="menu">
 				<div>
-					<h1>Project Title</h1>
+					<h1>Frankenstein Character Creator</h1>
 				</div>
 				<div>
 					<button onclick="Game.start()">Begin</button>
+
+					<p>Created by Thomas A.</p>
 				</div>
 			</div>
 
@@ -44,47 +46,55 @@
 				<h1>Create your Monster</h1>
 				<p>Select body parts from various people to construct your own monster!</p>
 
-				<h2>Head from:</h2>
+				<h2>Head from :</h2>
 				<div class="select-part" name="head">
-					<button class="val-92">Mark, the Quantum Physicist</button>
-					<button class="val-69">Tony, the Architect</button>
-					<button class="val-17">Savanna, the Waitress</button>
+					<button name="92">Mark, the Quantum Physicist</button>
+					<button name="69">Tony, the Architect</button>
+					<button name="17">Savanna, the Waitress</button>
 				</div>
 
-				<h2>Torso from:</h2>
+				<h2>Torso from :</h2>
 				<div class="select-part" name="torso">
-					<button class="val-85">Raphael, the Martial Artist</button>
-					<button class="val-78">Annika, the Athlete</button>
-					<button class="val-23">Dale, the IT Manager</button>
+					<button name="85">Raphael, the Martial Artist</button>
+					<button name="78">Annika, the Athlete</button>
+					<button name="23">Ron, the IT Manager</button>
 				</div>
 
-				<h2>Arms from:</h2>
+				<h2>Arms from :</h2>
 				<div class="select-part" name="arms">
-					<button class="val-100">Denise, the Surgeon</button>
-					<button class="val-61">Kylie, the Chemist</button>
-					<button class="val-46">Ethan, the Construction Worker</button>
+					<button name="100">Denise, the Surgeon</button>
+					<button name="61">Kylie, the Chemist</button>
+					<button name="46">Ethan, the Construction Worker</button>
 				</div>
 
-				<h2>Hands from:</h2>
+				<h2>Hands from :</h2>
 				<div class="select-part" name="hands">
-					<button class="val-91">Aaron, the Artist</button>
-					<button class="val-75">Spencer, the Engineer</button>
-					<button class="val-37">Tessa, the Baker</button>
+					<button name="91">Aaron, the Artist</button>
+					<button name="75">Spencer, the Engineer</button>
+					<button name="37">Tessa, the Baker</button>
 				</div>
 
-				<h2>Legs from:</h2>
+				<h2>Legs from :</h2>
 				<div class="select-part" name="legs">
-					<button class="val-83">Ronaldo, the Professional Trainer</button>
-					<button class="val-64">Michael, the Farmer</button>
-					<button class="val-26">Sharon, the Accountant</button>
+					<button name="83">Ronaldo, the Pro Trainer</button>
+					<button name="64">Michael, the Farmer</button>
+					<button name="26">Sharon, the Accountant</button>
 				</div>
 
-				<h2>Feet from:</h2>
+				<h2>Feet from :</h2>
 				<div class="select-part" name="feet">
-					<button class="val-77">Dave, the Carpenter</button>
-					<button class="val-70">Francis, the Factory Worker</button>
-					<button class="val-14">Kathy, the Stock Broker</button>
+					<button name="77">Dave, the Carpenter</button>
+					<button name="70">Francis, the Factory Worker</button>
+					<button name="14">Kathy, the Stock Broker</button>
 				</div>
+
+				<button id="finish-monster" onclick="Game.createMonster()">Create Monster</button>
+			</div>
+
+
+			<!-- See comparisons & situation -->
+			<div id="compare" class="hidden">
+				<h1>Hello</h1>
 			</div>
 
 		</main>

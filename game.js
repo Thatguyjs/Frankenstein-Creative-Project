@@ -6,10 +6,13 @@ const Game = {
 	scene: 0,
 
 	sceneList: [
-		'menu', 'create', 'finish', 'view'
+		'menu', 'create', 'compare'
 	],
 
 	sceneElem: null,
+
+	// Selected parts
+	selected: [],
 
 
 	// Init variables and stuff
@@ -72,13 +75,39 @@ const Game = {
 
 	// Select a body part
 	selectPart: function(element) {
-		let section = element.parentNode.getAttribute('name');
+		// De-select other parts
+		for(let i = 0; i < 3; i++) {
+			element.parentNode.children[i].classList.remove('selected');
+		}
 
-		let name = element.innerHTML;
-		let value = Number(element.className.slice(4));
+		// Select clicked part
+		element.classList.add('selected');
+	},
 
-		// TEMP
-		console.log(section, name, value);
+
+	createMonster: async function() {
+		let elements = this.sceneElem.querySelectorAll('.selected:not(#finish-monster)');
+		elements = Array.from(elements);
+
+		if(elements.length < 6) {
+			alert("Select a part from each category to continue!");
+			return;
+		}
+
+		// Store selected parts
+		for(let e in elements) {
+			this.selected.push({
+				name: elements[e].innerHTML,
+				category: elements[e].parentNode.getAttribute('name'),
+				value: Number(elements[e].getAttribute('name'))
+			});
+		}
+
+		// Transition to next scene
+		initTransition();
+		await startTransition();
+
+		this.nextScene();
 	}
 
 };
@@ -89,6 +118,6 @@ window.addEventListener('load', Game.init);
 
 // Log the repo url
 function logRepo() {
-	console.log("%cOh hi there. Respository link below, if you want it.", "font-size: 20px");
+	console.log("%cOh hi there. Respository link is below, if you want it.", "font-size: 20px");
 	console.log("%chttps://github.com/Thatguyjs/Frankenstein-Creative-Project", "font-size: 15px");
 }

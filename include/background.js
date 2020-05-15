@@ -33,7 +33,7 @@ backParticles.init(
 		if(p.y + p.width <= 0) {
 			p.x = (Math.random() - 0.25) * Gfx.canvas.width * 1.5,
 			p.y = Math.random() * Gfx.canvas.height * 1.5 + Gfx.canvas.height + 80;
-			p.width = 80;
+			p.width = Math.random() * 10 + 85;
 		}
 
 		if(p.x - p.width > Gfx.canvas.width) {
@@ -56,7 +56,7 @@ function initBackground() {
 			backParticles.add(new Gfx.Particle(
 				(Math.random() - 0.25) * Gfx.canvas.width * 1.5,
 				Math.random() * Gfx.canvas.height * 1.5 + Gfx.canvas.height + 80,
-				80,
+				Math.random() * 10 + 85,
 				Math.random() * 10 + 25
 			));
 		}
