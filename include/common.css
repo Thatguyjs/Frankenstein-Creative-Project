@@ -40,10 +40,17 @@ main {
 
 
 main > div {
-	margin-left: 20%;
+	position: absolute;
+	left: 50%;
+
+	transform: translateX(-50%);
 
 	width: 60%;
 	height: 100%;
+
+	min-width: 400px;
+
+	/* background: rgba(255, 0, 0, 0.15); */
 }
 
 
