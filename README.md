@@ -1,2 +1,2 @@
 # Frankenstein-Creative-Project
-(http://thatguyjs.github.io/Frankenstein-Creative-Project)[Hosted here];
+[Hosted here](http://thatguyjs.github.io/Frankenstein-Creative-Project)
