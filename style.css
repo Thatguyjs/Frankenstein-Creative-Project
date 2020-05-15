@@ -57,15 +57,11 @@
 	font-size: 26px;
 }
 
-#create .select-part:not(:last-child) {
-	margin-bottom: 40px;
-}
-
 #create .select-part {
 	margin-left: 100px;
+	margin-bottom: 40px;
+	
 	height: 40px;
-
-	background: rgba(255, 255, 255, 0.15);
 }
 
 #create .select-part button {
@@ -75,9 +71,19 @@
 	width: 30%;
 	height: 100%;
 
-	color: rgb(200, 200, 200);
-	font-size: 20px;
+	color: rgb(160, 160, 160);
+	font-size: 19px;
 	font-weight: bold;
+	letter-spacing: 1px;
 
-	background: none;
+	background: rgb(15, 15, 15);
+	border: 2px solid rgb(28, 28, 28);
+	border-radius: 3px;
+
+	transition: background 0.2s, border 0.2s;
+}
+
+#create .select-part .selected {
+	background: rgb(15, 45, 20);
+	border: 2px solid rgb(24, 50, 28);
 }

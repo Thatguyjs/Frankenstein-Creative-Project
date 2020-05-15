@@ -56,6 +56,29 @@ const Game = {
 
 		this.sceneElem = this.getElem();
 		this.sceneElem.classList.remove('hidden');
+
+		// Get buttons
+		if(this.sceneElem.id === 'create') {
+			let buttons = Array.from(this.sceneElem.querySelectorAll('button'));
+
+			for(let b in buttons) {
+				buttons[b].addEventListener('click', (event) => {
+					Game.selectPart(event.target);
+				});
+			}
+		}
+	},
+
+
+	// Select a body part
+	selectPart: function(element) {
+		let section = element.parentNode.getAttribute('name');
+
+		let name = element.innerHTML;
+		let value = element.className;
+
+		// TEMP
+		console.log(section, name, value);
 	}
 
 };
