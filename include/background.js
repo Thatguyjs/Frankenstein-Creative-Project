@@ -19,20 +19,25 @@ backParticles.init(
 		if(p.y - p.width > Gfx.canvas.height) return;
 
 		if(p.width > 20)
-			p.width -= Math.random() / 10;
+			p.width -= Math.random() / 12;
 
+		Gfx.fill(p.height);
 		Gfx.circle(p.x, p.y, p.width);
 	},
 
 	// Update
 	function(p) {
-		p.x += Math.random() * 0.4;
+		p.x += Math.random() * 0.6;
 		p.y -= Math.random() / 2 + 0.5;
 
 		if(p.y + p.width <= 0) {
-			p.x = (Math.random() - 0.5) * Gfx.canvas.width * 1.5,
+			p.x = (Math.random() - 0.25) * Gfx.canvas.width * 1.5,
 			p.y = Math.random() * Gfx.canvas.height * 1.5 + Gfx.canvas.height + 80;
 			p.width = 80;
+		}
+
+		if(p.x - p.width > Gfx.canvas.width) {
+			p.x = -p.width - (Math.random() * 100);
 		}
 	}
 
@@ -47,11 +52,12 @@ function initBackground() {
 
 	// Generate particles
 	if(!backParticles.particles.length) {
-		for(let i = 0; i < 200; i++) {
+		for(let i = 0; i < 120; i++) {
 			backParticles.add(new Gfx.Particle(
-				(Math.random() - 0.5) * Gfx.canvas.width * 1.5,
+				(Math.random() - 0.25) * Gfx.canvas.width * 1.5,
 				Math.random() * Gfx.canvas.height * 1.5 + Gfx.canvas.height + 80,
-				80
+				80,
+				Math.random() * 10 + 25
 			));
 		}
 	}
