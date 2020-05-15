@@ -1,6 +1,7 @@
 /* Copyright (c) 2020 Thatguyjs All Rights Reserved. */
 
 
+/* Menu stuff */
 #menu div {
 	position: relative;
 	width: 100%;
@@ -17,7 +18,7 @@
 	width: 100%;
 
 	color: rgb(220, 220, 220);
-	font-size: 55px;
+	font-size: 60px;
 	letter-spacing: 4px;
 }
 
@@ -32,7 +33,7 @@
 	height: 50px;
 
 	color: rgb(120, 120, 120);
-	font-size: 20px;
+	font-size: 22px;
 	letter-spacing: 2px;
 
 	background: rgba(0, 0, 0, 0.15);
@@ -45,4 +46,38 @@
 #menu button:hover {
 	color: white;
 	background: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Create monster stuff */
+#create h2 {
+	margin: 10px 100px;
+
+	color: rgb(230, 230, 230);
+	font-size: 26px;
+}
+
+#create .select-part:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+#create .select-part {
+	margin-left: 100px;
+	height: 40px;
+
+	background: rgba(255, 255, 255, 0.15);
+}
+
+#create .select-part button {
+	text-align: left;
+	padding-left: 10px;
+
+	width: 30%;
+	height: 100%;
+
+	color: rgb(200, 200, 200);
+	font-size: 20px;
+	font-weight: bold;
+
+	background: none;
 }

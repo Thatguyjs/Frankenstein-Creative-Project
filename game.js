@@ -14,6 +14,8 @@ const Game = {
 
 	// Init variables and stuff
 	init: function() {
+		console.log("Log repo");
+		// logRepo();
 		initBackground();
 
 		Game.sceneElem = Game.getElem();
@@ -60,3 +62,10 @@ const Game = {
 
 
 window.addEventListener('load', Game.init);
+
+
+// Log the repo url
+function logRepo() {
+	console.log("%cOh hi there. Respository link below, if you want it.", "font-size: 20px");
+	console.log("%chttps://github.com/Thatguyjs/Frankenstein-Creative-Project", "font-size: 15px");
+}

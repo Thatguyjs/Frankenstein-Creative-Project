@@ -6,6 +6,8 @@ const transition = document.getElementById("transition");
 
 
 function initTransition() {
+	transition.classList.remove('hidden');
+
 	Gfx.useCanvas(transition);
 	Gfx.resizeCanvas(window.innerWidth, window.innerHeight);
 }
@@ -61,6 +63,7 @@ async function startTransition() {
 
 				if(part > 0) {
 					Gfx.context.globalCompositeOperation = 'source-over';
+					transition.classList.add('hidden');
 					return;
 				}
 

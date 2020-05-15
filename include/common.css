@@ -1,11 +1,13 @@
 /* Copyright (c) 2020 Thatguyjs All Rights Reserved. */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 
 * {
-	font-family: "Balsamiq Sans";
+	font-family: "Indie Flower", cursive;
 }
 
 
@@ -46,19 +48,33 @@ main > div {
 	width: 60%;
 	height: 100%;
 
-	/* background: rgba(255, 0, 0, 0.15); */
+	background: rgba(255, 0, 0, 0.15);
 }
 
 
 main > div > h1 {
 	text-align: center;
-	padding: 40px 0;
+	padding-top: 35px;
 	margin: 0;
 
 	width: 100%;
 
 	color: rgb(220, 220, 220);
 	font-size: 35px;
+	letter-spacing: 2px;
+}
+
+
+main > div > p {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 20px;
+
+	width: 100%;
+
+	color: rgb(140, 140, 140);
+	font-size: 20px;
+	letter-spacing: 1px;
 }
 
 
