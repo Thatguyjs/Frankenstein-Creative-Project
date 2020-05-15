@@ -75,7 +75,7 @@ const Game = {
 		let section = element.parentNode.getAttribute('name');
 
 		let name = element.innerHTML;
-		let value = element.className;
+		let value = Number(element.className.slice(4));
 
 		// TEMP
 		console.log(section, name, value);
