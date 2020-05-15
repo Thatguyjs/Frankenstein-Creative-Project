@@ -1,0 +1,16 @@
+/* Copyright (c) 2020 Thatguyjs All Rights Reserved. */
+
+
+body *:not(.show) {
+	display: none !important;
+}
+
+#script-message {
+	position: absolute;
+	text-align: center;
+
+	width: 100%;
+
+	color: rgb(140, 140, 140);
+	font-size: 50px;
+}

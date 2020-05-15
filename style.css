@@ -1,0 +1,55 @@
+/* Copyright (c) 2020 Thatguyjs All Rights Reserved. */
+
+
+#menu {
+	margin-left: 20%;
+
+	width: 60%;
+	height: 100%;
+}
+
+#menu div {
+	position: relative;
+	width: 100%;
+	height: 50%;
+}
+
+#menu h1 {
+	position: absolute;
+	text-align: center;
+	bottom: 40px;
+
+	margin: 0;
+
+	width: 100%;
+
+	color: rgb(220, 220, 220);
+	font-size: 55px;
+	letter-spacing: 4px;
+}
+
+#menu button {
+	position: absolute;
+	left: 50%;
+	top: 60px;
+
+	transform: translateX(-50%);
+
+	width: 140px;
+	height: 50px;
+
+	color: rgb(120, 120, 120);
+	font-size: 20px;
+	letter-spacing: 2px;
+
+	background: rgba(0, 0, 0, 0.15);
+	border: 2px solid rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+
+	transition: color 0.4s, background 0.4s;
+}
+
+#menu button:hover {
+	color: white;
+	background: rgba(0, 0, 0, 0.4);
+}

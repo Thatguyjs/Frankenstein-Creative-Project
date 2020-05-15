@@ -1,0 +1,64 @@
+<!-- Copyright (c) 2020 Thatguyjs All Rights Reserved. -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Frankenstein Creative Project</title>
+
+		<link rel="stylesheet" href="/include/common.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+		<!-- Prevent page loading -->
+		<noscript class="show">
+			<link rel="stylesheet" href="/include/hideall.css">
+			<h1 class="show" id="script-message">JavaScript is required for this site</h1>
+		</noscript>
+
+
+		<!-- Background canvas -->
+		<canvas id="background">
+			Your browser does not support the HTML5 canvas!
+		</canvas>
+
+
+		<!-- Game -->
+		<main>
+
+			<!-- Menu -->
+			<div id="menu">
+				<div>
+					<h1>Project Title</h1>
+				</div>
+				<div>
+					<button onclick="Game.start()">Begin</button>
+				</div>
+			</div>
+
+
+			<!-- Create your monster -->
+			<div id="create" class="hidden">
+				<h1>Hello</h1>
+			</div>
+
+		</main>
+
+
+		<!-- Transition canvas -->
+		<canvas id="transition">
+			Your browser does not support the HTML5 canvas!
+		</canvas>
+
+
+		<!-- Scripts -->
+		<script src="/include/draw.js"></script>
+
+		<script src="/include/background.js"></script>
+		<script src="/include/transition.js"></script>
+
+		<script src="game.js"></script>
+	</body>
+</html>
