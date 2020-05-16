@@ -127,6 +127,24 @@
 	width: 50%;
 }
 
+#stats > p {
+	margin-top: 0;
+
+	font-size: 21px;
+}
+
+#my-monster {
+	margin-bottom: 8px;
+
+	color: rgb(30, 140, 75);
+}
+
+#other-monster {
+	margin-bottom: 40px;
+
+	color: rgb(175, 40, 55);
+}
+
 #stats h2 {
 	margin: 8px;
 
