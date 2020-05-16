@@ -6,6 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Frankenstein Character Creator</title>
+		<link rel="icon" href="/favicon.ico">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Create your own monster to compare with Frankenstein">
@@ -97,7 +98,50 @@
 
 			<!-- See comparisons & situation -->
 			<div id="compare" class="hidden">
-				<h1>Compare with Frankenstein</h1>
+				<h1>Compare your Monster</h1>
+				<p>@ÆÞÚàØÊèÊÈ@èÐÒæ@àäÞÔÊÆè@ÒÜ@f@ÈÂòæ\@è@æêÆÖÊÈ\</p>
+
+				<!-- Compare stats -->
+				<div id="stats">
+					<h2>Intelligence</h2>
+					<div class="stat-bar" name="intelligence">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+
+					<h2>Strength</h2>
+					<div class="stat-bar" name="strength">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+
+					<h2>Agility</h2>
+					<div class="stat-bar" name="agility">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+
+					<h2>Precision</h2>
+					<div class="stat-bar" name="precision">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+
+					<h2>Speed</h2>
+					<div class="stat-bar" name="speed">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+
+					<h2>Total</h2>
+					<div class="stat-bar" name="total">
+						<span><p></p></span>
+						<span><p></p></span>
+					</div>
+				</div>
+
+				<!-- Restart the game -->
+				<button id="restart" onclick="Game.restart()">Restart</button>
 			</div>
 
 		</main>

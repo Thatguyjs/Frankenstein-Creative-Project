@@ -14,6 +14,26 @@ const Game = {
 	// Selected parts
 	selected: [],
 
+	// List of score properties
+	scoreProps: [
+		'intelligence',
+		'strength',
+		'agility',
+		'precision',
+		'speed',
+		'total'
+	],
+
+	// Frankenstein monster scores
+	frankenstein: {
+		'intelligence': 86,
+		'strength': 98,
+		'agility': 66,
+		'precision': 35,
+		'speed': 100,
+		'total': 77
+	},
+
 
 	// Init variables and stuff
 	init: function() {
@@ -22,6 +42,14 @@ const Game = {
 		initBackground();
 
 		Game.sceneElem = Game.getElem();
+	},
+
+
+	// Restart the game
+	restart: function() {
+		if(window.confirm("You will lose all progress if you restart!")) {
+			window.location.reload();
+		}
 	},
 
 
@@ -94,6 +122,8 @@ const Game = {
 			return;
 		}
 
+		this.score = 0;
+
 		// Store selected parts
 		for(let e in elements) {
 			this.selected.push({
@@ -103,21 +133,66 @@ const Game = {
 			});
 		}
 
+		// Set scores on next scene
+		this.setScores(this.frankenstein, 1);
+		this.setScores(this.getScores(), 0);
+
 		// Transition to next scene
 		initTransition();
 		await startTransition();
 
 		this.nextScene();
+	},
+
+
+	// Get range of different scores (0 - 100)
+	getScores: function() {
+		let base = {};
+
+		for(let s in this.selected) {
+			base[this.selected[s].category] = this.selected[s].value;
+		}
+
+		return {
+			'intelligence': Math.floor(Gfx.map(base.head + (base.torso / 4), 0, 125, 0, 100)),
+			'strength': Math.floor(Gfx.map(
+				base.torso + base.arms / 2 + base.hands / 5 + base.legs / 2 + base.feet / 5,
+				0, 240, 0, 100
+			)),
+			'agility': Math.floor(Gfx.map(
+				base.torso / 2 + base.arms / 4 + base.hands + base.legs / 4 + base.feet,
+				0, 300, 0, 100
+			)),
+			'precision': Math.floor(Gfx.map(
+				base.head / 2 + base.torso / 4 + base.arms + base.hands + base.feet / 4,
+				0, 300, 0, 100
+			)),
+			'speed': Math.floor(Gfx.map(base.legs + base.feet / 2, 0, 150, 0, 100)),
+			'total': Math.floor(
+				(base.head + base.torso + base.arms + base.hands + base.legs + base.feet) / 6
+			)
+		};
+	},
+
+
+	// Display default & user scores
+	setScores: function(scores, which) {
+		let base = document.getElementById("compare");
+
+		for(let s in scores) {
+			let elem = base.querySelector(`div[name=${s}]`).children[which];
+			elem.style.width = scores[s] + '%';
+			elem.children[0].innerHTML = scores[s] + '';
+		}
 	}
 
 };
-
 
 window.addEventListener('load', Game.init);
 
 
 // Log the repo url
 function logRepo() {
-	console.log("%cOh hi there. Respository link is below, if you want it.", "font-size: 20px");
+	console.log("%cOh hi there. Repository link is below, if you want it.", "font-size: 20px");
 	console.log("%chttps://github.com/Thatguyjs/Frankenstein-Creative-Project", "font-size: 15px");
 }

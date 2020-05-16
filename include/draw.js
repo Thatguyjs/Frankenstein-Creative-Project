@@ -27,6 +27,12 @@ let Gfx = {
 	},
 
 
+	// Map a value to another range
+	map: function(value, start1, stop1, start2, stop2) {
+		return (value - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+	},
+
+
 	// Return a color string from values
 	color: function(r, g, b, a) {
 		if(!r && r !== 0) r = 0;

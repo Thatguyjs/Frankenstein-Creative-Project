@@ -121,3 +121,42 @@
 
 
 /* Monster comparisons and stuff */
+#stats h2 {
+	margin: 8px;
+
+	color: rgb(175, 175, 175);
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+
+.stat-bar {
+	margin-bottom: 30px;
+
+	width: 50%;
+	height: 60px;
+
+	background: none;
+	border: 2px solid rgb(25, 28, 30);
+}
+
+.stat-bar span {
+	display: block;
+	text-align: right;
+
+	height: 50%;
+
+	background: rgb(140, 30, 35);
+}
+
+.stat-bar span:first-child {
+	background: rgb(30, 140, 75);
+}
+
+.stat-bar span p {
+	margin: 0;
+	padding: 3px 8px;
+
+	color: white;
+	font-size: 17px;
+	font-family: monospace;
+}

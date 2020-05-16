@@ -48,7 +48,7 @@ async function startTransition() {
 				i * (Gfx.canvas.width / pNum),
 				Gfx.canvas.height + Math.random() * 100,
 				Math.random() * 10 + 20,
-				Math.random() * 8 + 12
+				Math.random() * 8 + 14
 			));
 		}
 
@@ -71,7 +71,7 @@ async function startTransition() {
 
 				for(let pt in system.particles) {
 					system.particles[pt].y = Gfx.canvas.height + Math.random() * 100;
-					system.particles[pt].height = Math.random() * 8 + 12;
+					system.particles[pt].height = Math.random() * 8 + 14;
 				}
 
 				passed = 0;
