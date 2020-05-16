@@ -14,31 +14,19 @@ const Game = {
 	// Selected parts
 	selected: [],
 
-	// List of score properties
-	scoreProps: [
-		'intelligence',
-		'strength',
-		'agility',
-		'precision',
-		'speed',
-		'total'
-	],
-
 	// Frankenstein monster scores
 	frankenstein: {
 		'intelligence': 86,
 		'strength': 98,
 		'agility': 66,
 		'precision': 35,
-		'speed': 100,
-		'total': 77
+		'speed': 100
 	},
 
 
 	// Init variables and stuff
 	init: function() {
-		console.log("Log repo");
-		// logRepo();
+		logRepo();
 		initBackground();
 
 		Game.sceneElem = Game.getElem();
@@ -167,22 +155,47 @@ const Game = {
 				base.head / 2 + base.torso / 4 + base.arms + base.hands + base.feet / 4,
 				0, 300, 0, 100
 			)),
-			'speed': Math.floor(Gfx.map(base.legs + base.feet / 2, 0, 150, 0, 100)),
-			'total': Math.floor(
-				(base.head + base.torso + base.arms + base.hands + base.legs + base.feet) / 6
-			)
+			'speed': Math.floor(Gfx.map(base.legs + base.feet / 2, 0, 150, 0, 100))
 		};
 	},
 
 
-	// Display default & user scores
+	// Display scores & matching paragraph
 	setScores: function(scores, which) {
 		let base = document.getElementById("compare");
 
+		// Get average
+		let total = 0;
+		let values = 0;
+
+		for(let s in scores) {
+			total += scores[s];
+			values++;
+		}
+
+		scores.total = Math.floor(total / values);
+
+		// Display scores
 		for(let s in scores) {
 			let elem = base.querySelector(`div[name=${s}]`).children[which];
 			elem.style.width = scores[s] + '%';
 			elem.children[0].innerHTML = scores[s] + '';
+		}
+
+		// Display the correct paragraph
+		if(which === 0) {
+			base = document.getElementById("encounter");
+
+			let paragraphs = base.querySelectorAll('p');
+			let chosen = 0;
+
+			if(scores.total < this.frankenstein.total) {
+				let diff = this.frankenstein.total - scores.total;
+				chosen = diff >= 25 ? 0 : (diff <= 5 ? 2 : 1);
+			}
+			else chosen = 2;
+
+			paragraphs[Math.floor(chosen)].classList.remove('hidden');
 		}
 	}
 
