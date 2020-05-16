@@ -121,6 +121,12 @@
 
 
 /* Monster comparisons and stuff */
+#stats {
+	display: inline-block;
+
+	width: 50%;
+}
+
 #stats h2 {
 	margin: 8px;
 
@@ -132,7 +138,7 @@
 .stat-bar {
 	margin-bottom: 30px;
 
-	width: 50%;
+	width: 95%;
 	height: 60px;
 
 	background: none;
@@ -159,4 +165,31 @@
 	color: white;
 	font-size: 17px;
 	font-family: monospace;
+}
+
+
+/* Monster encounter stuff */
+#encounter {
+	float: right;
+
+	width: 50%;
+	background: rgba(255, 0, 0, 0.15);
+}
+
+#encounter h2 {
+	margin: 8px 20px;
+
+	color: rgb(175, 175, 175);
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+
+#encounter p {
+	margin-left: 20px;
+
+	color: rgb(145, 145, 145);
+	font-weight: bold;
+	letter-spacing: 1px;
+
+	text-indent: 36px;
 }
