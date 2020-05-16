@@ -192,3 +192,20 @@
 
 	text-indent: 36px;
 }
+
+
+/* Restart button */
+#restart {
+	margin: 30px 0;
+	margin-left: calc(50% - 60px);
+
+	width: 120px;
+	height: 45px;
+
+	color: white;
+	font-size: 19px;
+
+	background: rgb(26, 26, 26);
+	border: 2px solid rgb(34, 34, 34);
+	border-radius: 3px;
+}
